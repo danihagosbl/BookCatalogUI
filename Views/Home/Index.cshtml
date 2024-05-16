@@ -3,15 +3,34 @@
 }
 
 <div>
-    <ul>
-        @if (ViewBag.Todos != null)
-        {
-            @foreach (var todo in ViewBag.Todos)
-            {
-                <li>@todo.Description</li>
-                <li>@todo.CreatedDate</li>
-            }
-        }
+  
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Book Description</th>
+                    <th scope="col">Published Date</th>
+                </tr>
+            </thead>
+        <tbody class="table-striped">
+            
+                 @if (ViewBag.Todos != null)
+                    {
+                                   
+                        @foreach (var todo in ViewBag.Todos)
+                        
+                        {
+                    <tr>
+                        <td>@todo.Description</td>
+                        <td>@todo.CreatedDate</td>
+                    </tr>
+                        }
+                 
+                
+            }                 
+                 
+               
+            </tbody>
+        </table>
 
-    </ul>
+
 </div>
