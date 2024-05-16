@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <ul>
+        @if (ViewBag.Todos != null)
+        {
+            @foreach (var todo in ViewBag.Todos)
+            {
+                <li>@todo.Description</li>
+                <li>@todo.CreatedDate</li>
+            }
+        }
+
+    </ul>
+</div>
