@@ -18,7 +18,7 @@ namespace BookCatalogUI.Controllers
         {
             HttpClient client = new HttpClient();
             var result = await client.GetAsync("https://localhost:7280/api/Todos");
-            //var result = await client.GetAsync("https://task-backend.internal.ambitiousforest-f9b17e64.uksouth.azurecontainerapps.io/tasks");
+            //var result = await client.GetAsync("https://booksapi.whitedesert-a14a6cd8.uksouth.azurecontainerapps.io/api/Todos");
             var text = await result.Content.ReadAsStringAsync();
             ViewBag.Todos = JsonConvert.DeserializeObject<List<ToDo>>(text);
             return View();
