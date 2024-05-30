@@ -6,8 +6,14 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace BookCatalogUI.Services
 {
+  
     public class ToDoService : IToDoService
     {
+        private static HttpClient sharedClient = new()
+        {
+            BaseAddress = new Uri("https://booksapi.whitedesert-a14a6cd8.uksouth.azurecontainerapps.io/api/Todos"),
+        };
+
         public async Task<ToDoDto> AddToDo(ToDoDto dto)
         {
             HttpClient client = new HttpClient();
@@ -21,10 +27,14 @@ namespace BookCatalogUI.Services
             return dto;
             
         }
-
-        public Task<ToDoDto> EditToDo(int id, ToDoDto dto)
+        public async Task<string> DeleteTodo(int id)
         {
-            throw new NotImplementedException();
+            HttpClient client = new HttpClient();
+            var uri = Path.Combine("https://booksapi.whitedesert-a14a6cd8.uksouth.azurecontainerapps.io/api/Todos", id.ToString());
+            var result = await client.DeleteAsync(uri);
+            var todo = await result.Content.ReadAsStringAsync();
+            return todo;
+            
         }
 
         public Task<ToDoDto> GetToDoById(int id)

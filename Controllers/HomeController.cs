@@ -31,12 +31,12 @@ namespace BookCatalogUI.Controllers
             await _todoService.AddToDo(todo);
             return View();
         }
-        public async Task<IActionResult> EditTodo(int id,ToDoDto todo)
+        public async Task<IActionResult> DeleteTodo(int id)
         {
-            await _todoService.EditToDo(id, todo);
-            return View();
+            await _todoService.DeleteTodo(id);
+            return RedirectToAction("Index");
         }
-
+        
         public IActionResult Privacy()
         {
             return View();
