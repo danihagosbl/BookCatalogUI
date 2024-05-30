@@ -22,6 +22,7 @@
                 <tr>
                     <th scope="col">Book Description</th>
                     <th scope="col">Published Date</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody class="table-striped">
@@ -35,6 +36,7 @@
                         <tr>
                             <td>@todo.Description</td>
                             <td>@todo.CreatedDate</td>
+                            <td asp-controller="Home" asp-action="EditTodo"><a class="btn btn-primary mb-2 asp-controller="Home" asp-route-id="@todo.ID" asp-action="EditTodo"><i class="bi bi-pencil-square"></i></a></td>
                         </tr>
                     }
 

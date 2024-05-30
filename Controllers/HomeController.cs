@@ -31,6 +31,11 @@ namespace BookCatalogUI.Controllers
             await _todoService.AddToDo(todo);
             return View();
         }
+        public async Task<IActionResult> EditTodo(int id,ToDoDto todo)
+        {
+            await _todoService.EditToDo(id, todo);
+            return View();
+        }
 
         public IActionResult Privacy()
         {

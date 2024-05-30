@@ -1,5 +1,7 @@
 ﻿using BookCatalogUI.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
+using NuGet.Protocol;
+using System.Net.Http.Json;
 using System.Reflection.Metadata.Ecma335;
 
 namespace BookCatalogUI.Services
@@ -18,6 +20,16 @@ namespace BookCatalogUI.Services
             }
             return dto;
             
+        }
+
+        public Task<ToDoDto> EditToDo(int id, ToDoDto dto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ToDoDto> GetToDoById(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
