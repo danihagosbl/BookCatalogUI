@@ -36,8 +36,10 @@
                         <tr>
                             <td>@todo.Description</td>
                             <td>@todo.CreatedDate</td>
-                            <td asp-controller="Home" asp-action="EditTodo"><a class="btn mb-2 asp-controller="Home" asp-route-id="@todo.ID" asp-action="EditTodo"><i class="bi bi-pencil-square"></i></a></td>
-                            <td asp-controller="Home" asp-action="EditTodo"><a class="btn mb-2 asp-controller="Home" asp-route-id="@todo.ID" asp-action="EditTodo"><i class="bi-trash"></i></a></td>
+                            <td>
+                                <a class="btn mb-2 asp-controller="Home" asp-controller="Home" asp-action="EditTodo" asp-route-id="@todo.ID" asp-action="EditTodo"><i class="bi bi-pencil-square"></i></a>
+                                <a class="btn mb-2 asp-controller="Home" asp-controller="Home" asp-action="EditTodo" asp-route-id="@todo.ID" asp-action="EditTodo"><i class="bi-trash"></i></a>
+                            </td>                            
                         </tr>
                     }
 
