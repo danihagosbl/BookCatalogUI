@@ -1,0 +1,12 @@
+componentType: state.azure.blobstorage
+version: v1
+metadata:
+- name: accountName
+  value: "stdpr2022512534"
+- name: accountKey
+  secretRef: account-key
+- name: containerName
+  value: myStuff
+secrets:
+- name: account-key
+  value: "STORAGE_ACCOUNT_KEY" 
